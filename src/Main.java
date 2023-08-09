@@ -10,7 +10,7 @@ public class Main {
 
         File file = new File("input.txt");
         Scanner scanner = null;
-        int number, diff_B_and_D;
+        int number;
 
         try {
             scanner = new Scanner(file);
@@ -22,7 +22,7 @@ public class Main {
         while(scanner.hasNextLine()) {
             number = scanner.nextInt();
 
-            if (number < 1 || number > 100){
+            if (number < 1 || number > 2 * Math.pow(10, 9)){
                 System.out.println("Некорректные данные.");
                 break;
             }
@@ -36,15 +36,15 @@ public class Main {
         List<Integer> list = new ArrayList<>();
         Main.inputData(list);
 
-        if (list.size() < 4){
-            System.out.println("Вы ввели меньше 4 чисел.");
+        if (list.size() > 1){
+            System.out.println("Ввели больше одного числа.");
             System.exit(0);
         }
 
-        if (list.get(1) - list.get(3) > 0){
-            System.out.println(list.get(0));
+        if (list.get(0) % 2 == 0){
+            System.out.println(list.get(0) / 2);
         } else {
-            System.out.println(list.get(0) + list.get(2) * (list.get(3) - list.get(1)));
+            System.out.println(1 + (list.get(0) - 1) / 2);
         }
 
     }
