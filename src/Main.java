@@ -41,11 +41,7 @@ public class Main {
             System.exit(0);
         }
 
-        if (list.get(0) % 2 == 0){
-            System.out.println(list.get(0) / 2);
-        } else {
-            System.out.println(1 + (list.get(0) - 1) / 2);
-        }
+        System.out.println(Integer.toBinaryString(list.get(0)).length());
 
     }
 }
